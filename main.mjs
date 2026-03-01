@@ -59,11 +59,11 @@ if (!process.env.DISCORD_TOKEN) {
 console.log('🔄 Discord に接続中...');
 client.on("debug", console.log);
 client.login(process.env.DISCORD_TOKEN)
-    .catch(error => {
-        console.error('❌ ログインに失敗しました:', error);
-        process.exit(1);
-    });
-
+  .then(() => console.log("✅ Login promise resolved"))
+  .catch(error => {
+    console.error("❌ Login failed:", error);
+    process.exit(1);
+  });
 // Express Webサーバーの設定（Render用）
 const app = express();
 const port = process.env.PORT || 3000;

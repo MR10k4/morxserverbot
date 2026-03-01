@@ -57,6 +57,7 @@ if (!process.env.DISCORD_TOKEN) {
 }
 
 console.log('🔄 Discord に接続中...');
+client.on("debug", console.log);
 client.login(process.env.DISCORD_TOKEN)
     .catch(error => {
         console.error('❌ ログインに失敗しました:', error);

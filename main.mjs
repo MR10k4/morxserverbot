@@ -21,7 +21,7 @@ const client = new Client({
 console.log("🔑 Token exists?", !!process.env.DISCORD_TOKEN);
 
 // Botが起動完了したときの処理
-client.once('ready', () => {
+client.once('clientReady', () => {
     console.log(`🎉 ${client.user.tag} が正常に起動しました！`);
     console.log(`📊 ${client.guilds.cache.size} つのサーバーに参加中`);
 });

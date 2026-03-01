@@ -18,6 +18,8 @@ const client = new Client({
     ],
 });
 
+console.log("🔑 Token exists?", !!process.env.DISCORD_TOKEN);
+
 // Botが起動完了したときの処理
 client.once('ready', () => {
     console.log(`🎉 ${client.user.tag} が正常に起動しました！`);
